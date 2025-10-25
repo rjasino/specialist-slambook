@@ -127,7 +127,6 @@
         <form method="POST" action="{{ route('slambook.process') }}">
             @csrf
             <input type="hidden" name="step" value="{{ $step }}">
-            <input type="hidden" name="action" value="{{ $action }}">
 
             @if($step == 1)
             <div class="form-group">

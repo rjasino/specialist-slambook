@@ -8,16 +8,58 @@ use Illuminate\Support\Facades\Auth;
 
 class SlamBookController extends Controller
 {
-    public function index($action)
+    public function index()
     {
-        return $this->showStep(1, $action);
+        return $this->showStep(1);
     }
 
-    public function showStep($step, $action)
+    public function edit(string $id)
+    {
+        $slambook = SlamBook::findOrFail($id);
+        $name = Auth::user()->name;
+        return view(
+            'slambook.edit',
+            ['slambook' => $slambook, 'name' => $name]
+        );
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $slambook = SlamBook::findOrFail($id);
+
+        $request->validate([
+            'age' => 'required|integer|min:1|max:120',
+            'zodiac_sign' => 'required',
+            'in_relationship' => 'required',
+            'dream_job' => 'required|string|max:255',
+            'motto' => 'required|string',
+            'three_words' => 'required|string',
+        ]);
+
+        $slambook->update([
+            'age' => $request->input('age'),
+            'zodiac_sign' => $request->input('zodiac_sign'),
+            'in_relationship' => $request->input('in_relationship'),
+            'dream_job' => $request->input('dream_job'),
+            'motto' => $request->input('motto'),
+            'three_words' => $request->input('three_words'),
+        ]);
+
+        return redirect('/')->with('success', 'SlamBook updated successfully!');
+    }
+
+    public function destroy(string $id)
+    {
+        $slambook = SlamBook::findOrFail($id);
+        $slambook->delete();
+
+        return redirect('/')->with('success', 'SlamBook deleted successfully!');
+    }
+
+    public function showStep($step)
     {
         $data = session('slambook_data', []);
         $data['step'] = $step;
-        $data['action'] = $action;
 
         $slambook = SlamBook::where('user_id', Auth::id())->first();
         if ($slambook) {    // edit
@@ -31,7 +73,7 @@ class SlamBookController extends Controller
 
         return view(
             'slambook.step',
-            ['step' => $step, 'data' => $data, 'action' => $action]
+            ['step' => $step, 'data' => $data]
         );
     }
 
@@ -74,7 +116,7 @@ class SlamBookController extends Controller
         } elseif ($request->has('previous')) {
             return redirect()->route('slambook.step', ['step' => $step - 1]);
         } elseif ($request->has('submit')) {
-            return $this->submit($action);
+            return $this->submit();
         }
     }
 
@@ -102,35 +144,37 @@ class SlamBookController extends Controller
         }
     }
 
-    public function submit($action)
+    public function submit()
     {
         $data = session('slambook_data', []);
 
         // Save to database
-        if ($action === 'edit') {
-            $slambook = SlamBook::where('user_id', Auth::id())->first();
-            if ($slambook) {
-                $slambook->update([
-                    'age' => $data['age'],
-                    'zodiac_sign' => $data['zodiac_sign'],
-                    'in_relationship' => $data['in_relationship'] === 'yes',
-                    'dream_job' => $data['dream_job'],
-                    'motto' => $data['motto'],
-                    'three_words' => $data['three_words'],
-                ]);
-            }
-        }
-        if ($action === 'create') {
-            SlamBook::create([
-                'user_id' => Auth::id(),
-                'age' => $data['age'],
-                'zodiac_sign' => $data['zodiac_sign'],
-                'in_relationship' => $data['in_relationship'] === 'yes',
-                'dream_job' => $data['dream_job'],
-                'motto' => $data['motto'],
-                'three_words' => $data['three_words'],
-            ]);
-        }
+        // if ($action === 'edit') {
+        //     $slambook = SlamBook::where('user_id', Auth::id())->first();
+        //     if ($slambook) {
+        //         $slambook->update([
+        //             'age' => $data['age'],
+        //             'zodiac_sign' => $data['zodiac_sign'],
+        //             'in_relationship' => $data['in_relationship'] === 'yes',
+        //             'dream_job' => $data['dream_job'],
+        //             'motto' => $data['motto'],
+        //             'three_words' => $data['three_words'],
+        //         ]);
+        //     }
+        // }
+        // if ($action === 'create') {
+
+        // }
+
+        SlamBook::create([
+            'user_id' => Auth::id(),
+            'age' => $data['age'],
+            'zodiac_sign' => $data['zodiac_sign'],
+            'in_relationship' => $data['in_relationship'] === 'yes',
+            'dream_job' => $data['dream_job'],
+            'motto' => $data['motto'],
+            'three_words' => $data['three_words'],
+        ]);
 
         // Clear session data
         session()->forget('slambook_data');

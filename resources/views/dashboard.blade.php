@@ -49,12 +49,20 @@
 
     <div style="margin: 20px 0;">
         @if ($slambook)
-        <a href="{{ route('slambook.start', 'edit') }}"
-            style="background-color: #ff0040; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+        <a href="{{ route('slambook.edit', $slambook->id) }}"
+            style="background-color: #ffdd00; color: black; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
             Edit Slambook
         </a>
+        <form method="POST" action="{{ route('slambook.destroy', $slambook->id) }}" style="display: inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('Are you sure you want to reset slambook?');"
+                style="background-color: #ff0040; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-left: 10px;">
+                Reset Slambook
+            </button>
+        </form>
         @else
-        <a href="{{ route('slambook.start', 'create') }}"
+        <a href="{{ route('slambook.start') }}"
             style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
             Start Slambook
         </a>
