@@ -3,13 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SlamBookController;
-use App\Models\SlamBook;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     if (Auth::check()) {
-        $slambook = SlamBook::where('user_id', Auth::id())->first();
-        return view('dashboard', ['slambook' => $slambook]);
+        return view('dashboard');
     }
     return redirect()->route('auth.login');
 });
