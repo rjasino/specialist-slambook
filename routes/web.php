@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SlamBookController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -29,4 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::put('/slambook/{id}', [SlamBookController::class, 'update'])->name('slambook.update');
 
     Route::delete('/slambook/{id}', [SlamBookController::class, 'destroy'])->name('slambook.destroy');
+
+    // Contact routes
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+    Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 });
