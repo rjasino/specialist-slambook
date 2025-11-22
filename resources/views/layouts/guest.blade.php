@@ -13,13 +13,14 @@
 
     <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/navigation.css',
-    'resources/css/slambook.css'])
+    @vite(['resources/css/app.css', 'resources/css/main.css', 'resources/css/footer.css', 'resources/css/auth.css',
+    'resources/js/app.js'])
     @endif
 </head>
 
 <body>
     @yield('content')
+    @include('layouts.footer')
 </body>
 
 </html>

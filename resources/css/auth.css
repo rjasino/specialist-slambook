@@ -1,0 +1,133 @@
+/* ============================================
+   AUTH.CSS - Authentication Pages Styles
+   ============================================ */
+
+/* Login/Register Container */
+.login-container {
+    max-width: 450px;
+    margin: 5rem auto;
+}
+
+/* Login/Register Card */
+.login-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Auth Header */
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.auth-header h1 {
+    color: #2575fc;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.auth-subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Form Groups in Auth */
+.login-card .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.login-card .form-group label {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.login-card input {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.login-card input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.1);
+}
+
+.login-card input::placeholder {
+    color: #999;
+}
+
+/* Block Button */
+.btn-block {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Auth Footer */
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f0f0f0;
+}
+
+.auth-footer p {
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.auth-footer a {
+    color: #2575fc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    color: #1a5fd6;
+    text-decoration: underline;
+}
+
+/* Error Messages in Auth */
+.login-card .alert-error {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.login-card .alert-error ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.login-card .alert-error li {
+    margin: 0.25rem 0;
+}
+
+/* Responsive Auth Pages */
+@media (max-width: 768px) {
+    .login-container {
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .login-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .auth-header h1 {
+        font-size: 1.75rem;
+    }
+}

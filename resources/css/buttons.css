@@ -1,0 +1,260 @@
+/* ============================================
+   BUTTONS.CSS - Reusable Button Components
+   ============================================ */
+
+/* Primary Button Styles */
+.btn-primary,
+.btn-primary-sm,
+.btn-primary-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); */
+    background-color: #2575fc;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-primary-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn-primary-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-primary:hover,
+.btn-primary-sm:hover,
+.btn-primary-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+    color: white;
+}
+
+.btn-primary:active,
+.btn-primary-sm:active,
+.btn-primary-lg:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled,
+.btn-primary-sm:disabled,
+.btn-primary-lg:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Secondary Button Styles */
+.btn-secondary,
+.btn-secondary-sm,
+.btn-secondary-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-secondary-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn-secondary-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-secondary:hover,
+.btn-secondary-sm:hover,
+.btn-secondary-lg:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+    color: white;
+}
+
+.btn-secondary:active,
+.btn-secondary-sm:active,
+.btn-secondary-lg:active {
+    transform: translateY(0);
+}
+
+.btn-secondary:disabled,
+.btn-secondary-sm:disabled,
+.btn-secondary-lg:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Edit Button Styles */
+.btn-edit,
+.btn-edit-sm,
+.btn-edit-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); */
+    background-color: #f59e0b;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn-edit {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-edit-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn-edit-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-edit:hover,
+.btn-edit-sm:hover,
+.btn-edit-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 174, 87, 0.4);
+    color: white;
+}
+
+.btn-edit:active,
+.btn-edit-sm:active,
+.btn-edit-lg:active {
+    transform: translateY(0);
+}
+
+/* Delete Button Styles */
+.btn-delete,
+.btn-delete-sm,
+.btn-delete-lg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* background: linear-gradient(135deg, #ff0844 0%, #ff6b6b 100%); */
+    background-color: #ef4444;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.btn-delete {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-delete-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn-delete-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.btn-delete:hover,
+.btn-delete-sm:hover,
+.btn-delete-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 8, 68, 0.4);
+    color: white;
+}
+
+.btn-delete:active,
+.btn-delete-sm:active,
+.btn-delete-lg:active {
+    transform: translateY(0);
+}
+
+/* Button Icons */
+.btn-primary .btn-icon,
+.btn-primary-sm .btn-icon,
+.btn-primary-lg .btn-icon,
+.btn-secondary .btn-icon,
+.btn-secondary-sm .btn-icon,
+.btn-secondary-lg .btn-icon,
+.btn-edit .btn-icon,
+.btn-edit-sm .btn-icon,
+.btn-edit-lg .btn-icon,
+.btn-delete .btn-icon,
+.btn-delete-sm .btn-icon,
+.btn-delete-lg .btn-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.5;
+    flex-shrink: 0;
+}
+
+.btn-primary-lg .btn-icon,
+.btn-secondary-lg .btn-icon,
+.btn-edit-lg .btn-icon,
+.btn-delete-lg .btn-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-primary-sm .btn-icon,
+.btn-secondary-sm .btn-icon,
+.btn-edit-sm .btn-icon,
+.btn-delete-sm .btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive Button Styles */
+@media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-edit,
+    .btn-delete {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-edit:hover,
+    .btn-delete:hover {
+        transform: none;
+    }
+}

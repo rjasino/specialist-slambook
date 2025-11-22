@@ -4,8 +4,13 @@
 <div class="main-content">
     <div class="login-container">
         <div class="login-card">
+            <div class="auth-header">
+                <h1>Welcome Back!</h1>
+                <p class="auth-subtitle">Sign in to access your Slambook</p>
+            </div>
+
             @if($errors->any())
-            <div style="color: red;">
+            <div class="alert alert-error">
                 <ul>
                     @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -13,19 +18,22 @@
                 </ul>
             </div>
             @endif
+
             <form method="POST" action="{{ route('auth.authenticate')}}">
                 @csrf
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
-                <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="btn-primary">Login</button>
+                <button type="submit" class="btn-primary btn-block">Login</button>
             </form>
-            <p>Don't have an account? <a href="{{ route('auth.register') }}">Register here.</a></p>
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="{{ route('auth.register') }}">Register here</a></p>
+            </div>
         </div>
     </div>
 </div>
