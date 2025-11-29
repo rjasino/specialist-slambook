@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SlamBook extends Model
 {
@@ -10,16 +11,17 @@ class SlamBook extends Model
 
     protected $fillable = [
         'user_id',
-        'age',
-        'zodiac_sign',
-        'in_relationship',
-        'dream_job',
-        'motto',
-        'three_words'
+        'question_id',
+        'response'
     ];
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function question(): BelongsTo
+    {
+        return $this->belongsTo(Question::class);
     }
 }

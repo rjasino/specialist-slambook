@@ -22,6 +22,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->n
 
 Route::middleware('auth')->group(function () {
     Route::get('/slambook', [SlamBookController::class, 'index'])->name('slambook.start');
+    Route::post('/slambook', [SlamBookController::class, 'store'])->name('slambook.store');
     Route::get('/slambook/step/{step}', [SlamBookController::class, 'showStep'])->name('slambook.step');
     Route::post('/slambook/process', [SlamBookController::class, 'processStep'])->name('slambook.process');
 

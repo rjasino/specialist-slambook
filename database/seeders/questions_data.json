@@ -1,0 +1,212 @@
+[
+    {
+        "section_id": 1,
+        "question_text": "Age",
+        "question_type": "number"
+    },
+    {
+        "section_id": 1,
+        "question_text": "Zodiac Sign",
+        "question_type": "multiple_choice"
+    },
+    {
+        "section_id": 1,
+        "question_text": "In Relationship?",
+        "question_type": "true_false"
+    },
+    {
+        "section_id": 1,
+        "question_text": "Dream Job",
+        "question_type": "long_answer"
+    },
+    {
+        "section_id": 1,
+        "question_text": "Motto",
+        "question_type": "long_answer"
+    },
+    {
+        "section_id": 1,
+        "question_text": "Three Words",
+        "question_type": "long_answer"
+    },
+    {
+        "section_id": 1,
+        "question_text": "First Name",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 1,
+        "question_text": "Last Name",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 1,
+        "question_text": "Hobbies",
+        "question_type": "long_answer"
+    },
+    {
+        "section_id": 1,
+        "question_text": "Best Moments in Life",
+        "question_type": "long_answer"
+    },
+    {
+        "section_id": 1,
+        "question_text": "Unforgettable Experience",
+        "question_type": "long_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Movie",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Book",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Song",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "TV Show",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Game",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Anime",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Food",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Drink",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Ice Cream Flavor",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Color",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 2,
+        "question_text": "Brand (Anything)",
+        "question_type": "short_answer"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Coffee or Tea?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Summer or Winter?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Pancakes or Waffles?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Dogs or Cats?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Movie night or a night out?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Introvert or Extrovert?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Chocolate or Vanilla?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Sweet or Salty?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Books or Movies?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Beach or Mountains?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Phone call or Text message?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Early bird or Night owl?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "City or Countryside?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Action or Comedy?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Iced coffee or Hot coffee?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Pizza or Pasta?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Android or iPhone?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Work from home or Work in the office?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Cooking or Ordering takeout?",
+        "question_type": "yes_no"
+    },
+    {
+        "section_id": 3,
+        "question_text": "Run or Walk?",
+        "question_type": "yes_no"
+    }
+]

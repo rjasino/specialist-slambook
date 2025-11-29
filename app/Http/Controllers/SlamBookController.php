@@ -4,13 +4,50 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SlamBook;
+use App\Models\Section;
+use App\Models\Question;
 use Illuminate\Support\Facades\Auth;
 
 class SlamBookController extends Controller
 {
     public function index()
     {
-        return $this->showStep(1);
+        $sections = Section::with('questions')->get();
+
+        // Get existing answers for the current user
+        $existingAnswers = SlamBook::where('user_id', Auth::id())
+            ->pluck('response', 'question_id')
+            ->toArray();
+
+        return view('slambook.index', [
+            'sections' => $sections,
+            'slambook' => $existingAnswers ? (object)['answers' => $existingAnswers] : null
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $answers = $request->input('answers', []);
+
+        // Validate that all questions have answers
+        $request->validate([
+            'answers' => 'required|array',
+            'answers.*' => 'required'
+        ]);
+
+        // Delete existing answers for this user
+        SlamBook::where('user_id', Auth::id())->delete();
+
+        // Store new answers
+        foreach ($answers as $questionId => $response) {
+            SlamBook::create([
+                'user_id' => Auth::id(),
+                'question_id' => $questionId,
+                'response' => $response
+            ]);
+        }
+
+        return redirect('/')->with('success', 'SlamBook saved successfully!');
     }
 
     public function edit(string $id)
